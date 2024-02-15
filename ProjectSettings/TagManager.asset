@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - hrac
+  - enemy
+  - Checkpoint
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - podlaha
+  - stena
+  - enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: pozadi
+    uniqueID: 1125712263
+    locked: 0
+  - name: vepredu
+    uniqueID: 2722557143
+    locked: 0
+  - name: hrac
+    uniqueID: 4037907307
+    locked: 0
+  - name: uplne_vepredu
+    uniqueID: 2434222499
+    locked: 0
+  - name: zem
+    uniqueID: 161643703
+    locked: 0
