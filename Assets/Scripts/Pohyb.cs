@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Pohyb : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Pohyb : MonoBehaviour
     private float wallJumpColdown;
     private float horizontalInput;
 
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip jumpSound;
 
     private void Awake()
     {
@@ -54,7 +58,13 @@ public class Pohyb : MonoBehaviour
             wallJumpColdown += Time.deltaTime;
 
         if (Input.GetKey(KeyCode.Space))
+        {
             jump();
+
+            if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+                SoundManager.instance.PlaySound(jumpSound);
+        }
+           
     }
 
     private void jump()
