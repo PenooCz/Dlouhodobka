@@ -10,6 +10,9 @@ public class HP : MonoBehaviour
     private bool dead;
     [SerializeField] private Behaviour[] components;
 
+    [Header("Death sound")]
+    [SerializeField] private AudioClip deathSound;
+
     private void Awake()
     {
         currenthealth = startingHealth;
@@ -35,6 +38,7 @@ public class HP : MonoBehaviour
                 anim.SetTrigger("die");
                 GetComponent<Pohyb>().enabled = false;
                 dead = true;
+                SoundManager.instance.PlaySound(deathSound);
             }
         }
     }

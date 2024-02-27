@@ -8,6 +8,12 @@ public class Player_respawn : MonoBehaviour
     private HP playerhealth;
     private UIManager uiManager;
 
+    [Header("Respawn sound")]
+    [SerializeField] private AudioClip respwSound;
+
+    [Header("Checkpoint sound")]
+    [SerializeField] private AudioClip checkpointSound;
+
 
     private void Awake()
     {
@@ -29,6 +35,7 @@ public class Player_respawn : MonoBehaviour
         transform.position = currentCheckpoint.position;
 
         Camera.main.GetComponent<CameraController>().MoveToNewRoom(currentCheckpoint.parent);
+        SoundManager.instance.PlaySound(respwSound);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,6 +45,7 @@ public class Player_respawn : MonoBehaviour
             currentCheckpoint = collision.transform;
             collision.GetComponent<Collider2D>().enabled = false;
             collision.GetComponent<Animator>().SetTrigger("save");
+            SoundManager.instance.PlaySound(checkpointSound);
         }
        
     }
