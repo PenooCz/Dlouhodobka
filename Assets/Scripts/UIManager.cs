@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,13 +9,17 @@ public class UIManager : MonoBehaviour
     [Header("GameOver")]
     [SerializeField] private GameObject gameOverScreen;
 
-    [Header("GameOver")]
+    [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
+
+    [Header("End")]
+    [SerializeField] private GameObject endScreen;
 
     private void Awake()
     {
         gameOverScreen.SetActive(false);
         pauseScreen.SetActive(false);
+        endScreen.SetActive(false);
     }
 
     public void GameOver()
@@ -48,6 +53,13 @@ public class UIManager : MonoBehaviour
             else
                 PauseGame(true);
         }
+        /*
+        if (Input.GetKey(KeyCode.Q))
+        { 
+           endScreen.SetActive(true);
+        }
+        */
+
     }
     public void PauseGame(bool status)
     {

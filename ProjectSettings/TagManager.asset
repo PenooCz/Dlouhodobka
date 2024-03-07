@@ -8,6 +8,7 @@ TagManager:
   - hrac
   - enemy
   - Checkpoint
+  - vys
   layers:
   - Default
   - TransparentFX
