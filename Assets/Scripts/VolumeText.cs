@@ -24,6 +24,6 @@ public class VolumeText : MonoBehaviour
     private void UpdateVolume()
     {
         float volumeValue = PlayerPrefs.GetFloat(volumeName) * 100;
-        txt.text = infotext + volumeValue.ToString();
+        txt.text = infotext + volumeValue.ToString() + "%";
     }
 }
