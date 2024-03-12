@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HP : MonoBehaviour
 {
@@ -13,10 +14,27 @@ public class HP : MonoBehaviour
     [Header("Death sound")]
     [SerializeField] private AudioClip deathSound;
 
+    public static int deathCount = 0;
+    public Text deathCounterText;
+
     private void Awake()
     {
         currenthealth = startingHealth;
         anim = GetComponent<Animator>();
+    }
+    void Start()
+    {
+        deathCounterText.text = "Poèet smrtí: " + deathCount; 
+    }
+
+    public void HideDeathCounter()
+    {
+        deathCounterText.gameObject.SetActive(false); // Skryje text deathCounter
+    }
+
+    public void ShowDeathCounter()
+    {
+        deathCounterText.gameObject.SetActive(true); 
     }
 
     public void TakeDamage(float _damage)
@@ -39,6 +57,8 @@ public class HP : MonoBehaviour
                 GetComponent<Pohyb>().enabled = false;
                 dead = true;
                 SoundManager.instance.PlaySound(deathSound);
+                deathCount++;
+                deathCounterText.text = "Poèet smrtí: " + deathCount;
             }
         }
     }

@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
     {
 
         gameOverScreen.SetActive(true);
+        HP.deathCount = 0;
     }
 
     public void Restart()
@@ -37,11 +38,13 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         PauseGame(false);
-    }
+        HP.deathCount = 0;
+}
 
     public void Quit()
     {
         Application.Quit();
+        HP.deathCount = 0;
     }
 
     private void Update()
@@ -49,7 +52,9 @@ public class UIManager : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Escape)) 
         {
             if (pauseScreen.activeInHierarchy)
+            { 
                 PauseGame(false);
+            }
             else
                 PauseGame(true);
         }
@@ -66,8 +71,20 @@ public class UIManager : MonoBehaviour
         pauseScreen.SetActive(status);
 
         if (status)
+        { 
             Time.timeScale = 0;
+        }
         else 
             Time.timeScale = 1;
+    }
+
+    public void SoundVolume()
+    {
+        SoundManager.instance.ChangeSoundVolume(0.1f);
+    }
+
+    public void MusicVolume()
+    {
+        SoundManager.instance.ChangeMusicVolume(0.1f);
     }
 }

@@ -14,6 +14,8 @@ public class End_game : MonoBehaviour
         if (collision.tag == "hrac")
         {
             endScreen.SetActive(true);
+            HP hp = FindObjectOfType<HP>();
+            hp.HideDeathCounter();
         }
     }
 }
