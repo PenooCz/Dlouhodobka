@@ -3993,7 +3993,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Blahop\u0159eji ti!\nPoda\u0159ilo se ti to a do\u0161el jsi a\u017E do
-    c\xEDle\nProst\u011B maturitaka formalitka\n\n"
+    c\xEDle\nProst\u011B maturitka formalitka\n\n"
 --- !u!222 &90496640
 CanvasRenderer:
   m_ObjectHideFlags: 0
